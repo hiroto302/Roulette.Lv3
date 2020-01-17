@@ -374,6 +374,7 @@ GameObject:
   - component: {fileID: 1814482016}
   - component: {fileID: 1814482015}
   - component: {fileID: 1814482017}
+  - component: {fileID: 1814482018}
   m_Layer: 0
   m_Name: roulette
   m_TagString: Untagged
@@ -454,5 +455,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 201efda878a4c4c19823262d0ae4c771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1814482018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814482014}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db7ae7266099414c9799d5ce79dfcd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
