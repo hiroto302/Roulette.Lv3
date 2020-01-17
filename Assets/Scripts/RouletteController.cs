@@ -12,12 +12,20 @@ public class RouletteController : MonoBehaviour
 
     void Update()
     {
-        //回転機能
-        if(Input.GetMouseButton(0))
+        //タップの制限
+        if(this.rotSpeed == 0)
         {
-            this.rotSpeed = 10.0f;
+            //回転機能
+            if(Input.GetMouseButton(0))
+            {
+                this.rotSpeed = 10.0f;
+            }
         }
         transform.Rotate(0, 0, this.rotSpeed);
         this.rotSpeed *= 0.98f;
+        if(this.rotSpeed < 0.05f)
+        {
+            this.rotSpeed =0;
+        }
     }
 }
