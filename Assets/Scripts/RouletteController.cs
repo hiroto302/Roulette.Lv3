@@ -27,7 +27,7 @@ public class RouletteController : MonoBehaviour
             }
         }
         //タップの制限
-        else if(this.firstRotSpeed == 0)
+        else if(this.firstRotSpeed == 0  && this.secondRotSpeed ==0)
         {
             //回転機能
             if(Input.GetMouseButtonDown(0))
