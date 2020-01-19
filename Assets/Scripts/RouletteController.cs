@@ -1,17 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // ルーレットオブジェクトにはこちらのスクリプトをアタッチ
 public class RouletteController : MonoBehaviour
 {
+    GameObject textBackGround;
+    GameObject lotteryResult;
     float firstRotSpeed = 0; //１度目の回転速度変数
     float secondRotSpeed= 0; //２度目のタップでの回転速度変数
 
 
+
     void Start()
     {
-        
+        textBackGround = GameObject.Find("TextBackGround");
+        lotteryResult = GameObject.Find("LotteryResult");
+        this.textBackGround.SetActive(false);
+        this.lotteryResult.SetActive(false);
     }
 
     void Update()
@@ -51,27 +58,45 @@ public class RouletteController : MonoBehaviour
                 if(transform.localEulerAngles.z < 30.0f || 360.0f < transform.localEulerAngles.z)
                 {
                     Debug.Log("凶");
+                    this.textBackGround.SetActive(true);
+                    this.lotteryResult.SetActive(true);
+                    this.lotteryResult.GetComponent<Text>().text= "くじ結果\n凶\nアゲてこ！！";
                 }
                 else if(30.0f <= transform.localEulerAngles.z && transform.localEulerAngles.z < 90.0f)
                 {
                     Debug.Log("大吉");
+                    this.textBackGround.SetActive(true);
+                    this.lotteryResult.SetActive(true);
+                    this.lotteryResult.GetComponent<Text>().text= "くじ結果\n大吉\n最高！！神！";
 
                 }
                 else if(90.0f <= transform.localEulerAngles.z && transform.localEulerAngles.z < 150.0f)
                 {
                     Debug.Log("大凶");
+                    this.textBackGround.SetActive(true);
+                    this.lotteryResult.SetActive(true);
+                    this.lotteryResult.GetComponent<Text>().text= "くじ結果\n大..\n大吉最高！！";
                 }
                 else if(150.0f <= transform.localEulerAngles.z && transform.localEulerAngles.z < 210.0f)
                 {
                     Debug.Log("小吉");
+                    this.textBackGround.SetActive(true);
+                    this.lotteryResult.SetActive(true);
+                    this.lotteryResult.GetComponent<Text>().text= "くじ結果\n小吉\n最高！！";
                 }
                 else if(210.0f <= transform.localEulerAngles.z && transform.localEulerAngles.z < 270.0f)
                 {
                     Debug.Log("末吉");
+                    this.textBackGround.SetActive(true);
+                    this.lotteryResult.SetActive(true);
+                    this.lotteryResult.GetComponent<Text>().text= "くじ結果\n末吉\nアゲてこ！！";
                 }
                 else if(270.0f <= transform.localEulerAngles.z && transform.localEulerAngles.z < 330.0f)
                 {
                     Debug.Log("中吉");
+                    this.textBackGround.SetActive(true);
+                    this.lotteryResult.SetActive(true);
+                    this.lotteryResult.GetComponent<Text>().text= "くじ結果\n中吉\n最高！！";
                 }
             }
         }
