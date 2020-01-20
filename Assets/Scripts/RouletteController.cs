@@ -42,7 +42,7 @@ public class RouletteController : MonoBehaviour
             }
         }
         //タップの制限
-        else if(this.firstRotSpeed == 0  && this.secondRotSpeed ==0)
+        else if(this.firstRotSpeed == 0  && this.secondRotSpeed ==0 && this.textBackGround.activeSelf == false)
         {
             //回転機能
             if(Input.GetMouseButtonDown(0))
@@ -111,5 +111,18 @@ public class RouletteController : MonoBehaviour
                 }
             }
         }
+
+        if(this.textBackGround.activeSelf == true)
+        {
+            if(Input.GetMouseButtonDown(0))
+            {
+                Reset();
+            }
+        }
+    }
+    public void Reset()
+    {
+        this.textBackGround.SetActive(false);
+        this.lotteryResult.SetActive(false);
     }
 }
