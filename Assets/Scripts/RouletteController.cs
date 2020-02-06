@@ -54,7 +54,7 @@ public class RouletteController : MonoBehaviour
 
         animCtrl.SetFloat("RotSpeedF", firstRotSpeed);  //猫アニメーション
 
-        transform.Rotate(0, 0, this.firstRotSpeed + secondRotSpeed);
+        transform.Rotate(0, 0, this.firstRotSpeed + secondRotSpeed);  //2つの変数を格納することで、タップ毎の回転速度を制御
         this.secondRotSpeed *= 0.98f;
 
         //２度目のタップで止まる時、くじ結果を表示
@@ -66,7 +66,7 @@ public class RouletteController : MonoBehaviour
                 this.secondRotSpeed =0;
 
                 //おみくじ機能 rouletteの角度で判断
-                if(transform.localEulerAngles.z < 30.0f || 360.0f < transform.localEulerAngles.z)
+                if(transform.localEulerAngles.z < 30.0f || 330.0f < transform.localEulerAngles.z)
                 {
                     Debug.Log("凶");
                     this.textBackGround.SetActive(true);
